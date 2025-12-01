@@ -1,0 +1,175 @@
+/* ============================================
+   LOADER - MINIMALIST DESIGN
+   ============================================ */
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff5f7 0%, #ffe5ec 50%, #ffd4e0 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Confetti Animation */
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -10px;
+  opacity: 0;
+  animation: confettiFall 3s linear infinite;
+}
+
+.confetti svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes confettiFall {
+  0% {
+    top: -10%;
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+  100% {
+    top: 110%;
+    opacity: 0.7;
+    transform: translateX(50px) rotateZ(360deg);
+  }
+}
+
+.loader-content {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+  position: relative;
+  z-index: 10;
+}
+
+.loader-text {
+  margin-bottom: 50px;
+}
+
+.loader-greeting {
+  font-size: 28px;
+  font-weight: 300;
+  color: #d4849c;
+  margin: 0 0 5px 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: fadeIn 1.2s ease-out;
+}
+
+.loader-name {
+  font-size: 48px;
+  font-weight: 700;
+  color: #c9648f;
+  margin: 0 0 3px 0;
+  letter-spacing: 2px;
+  animation: fadeIn 1.4s ease-out;
+}
+
+.loader-age {
+  font-size: 56px;
+  font-weight: 900;
+  color: #e5a5bb;
+  margin: 0;
+  letter-spacing: 5px;
+  animation: fadeIn 1.6s ease-out;
+}
+
+.enter-btn {
+  padding: 18px 60px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(135deg, #d4849c 0%, #c9648f 100%);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(201, 100, 143, 0.3);
+  text-transform: uppercase;
+  animation: fadeIn 1.8s ease-out;
+}
+
+.enter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(201, 100, 143, 0.4);
+  background: linear-gradient(135deg, #c9648f 0%, #b85580 100%);
+}
+
+.enter-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loader-greeting {
+    font-size: 32px;
+  }
+  
+  .loader-name {
+    font-size: 48px;
+  }
+  
+  .loader-age {
+    font-size: 60px;
+  }
+  
+  .enter-btn {
+    padding: 15px 50px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-greeting {
+    font-size: 24px;
+  }
+  
+  .loader-name {
+    font-size: 36px;
+  }
+  
+  .loader-age {
+    font-size: 48px;
+  }
+  
+  .enter-btn {
+    padding: 12px 40px;
+    font-size: 14px;
+  }
+}
